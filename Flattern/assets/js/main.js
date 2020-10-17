@@ -1,6 +1,6 @@
 /**
-* Template Name: Flattern - v2.1.0
-* Template URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
+* Template Name: Company - v2.1.0
+* Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -8,7 +8,7 @@
   "use strict";
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
-  var scrolltoOffset = $('#header').outerHeight() - 1;
+  var scrolltoOffset = $('#header').outerHeight() - 2;
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -87,24 +87,6 @@
   } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
     $(".mobile-nav, .mobile-nav-toggle").hide();
   }
-  // Toggle .header-scrolled class to #header when page is scrolled
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('#header').addClass('header-scrolled');
-    } else {
-      $('#header').removeClass('header-scrolled');
-    }
-  });
-
-  if ($(window).scrollTop() > 100) {
-    $('#header').addClass('header-scrolled');
-  }
-
-  // Stick the header at top on scroll
-  $("#header").sticky({
-    topSpacing: 0,
-    zIndex: '50'
-  });
 
   // Intro carousel
   var heroCarousel = $("#heroCarousel");
@@ -138,8 +120,7 @@
   // Porfolio isotope and filter
   $(window).on('load', function() {
     var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
+      itemSelector: '.portfolio-item'
     });
 
     $('#portfolio-flters li').on('click', function() {
@@ -179,7 +160,6 @@
   function aos_init() {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
       once: true
     });
   }
